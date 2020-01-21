@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.thiha.recyclerview;
 
 import android.content.Context;
 import android.view.Gravity;

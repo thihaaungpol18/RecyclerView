@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.thiha.recyclerview;
 
 import org.junit.Test;
 
