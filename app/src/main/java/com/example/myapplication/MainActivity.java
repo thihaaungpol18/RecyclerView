@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         itemLists.add(new ModelClass("Kyaw Nanda", R.drawable.user_male, android.R.color.darker_gray));
 
         adapter = new CustomAdapter(itemLists);
-        layoutManager = new LinearLayoutManager(this);
+        layoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
 
