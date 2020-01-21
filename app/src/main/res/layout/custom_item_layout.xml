@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainCardView"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
     android:layout_margin="8dp"
+    android:clickable="true"
     android:elevation="8dp"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
     android:orientation="vertical"
     app:cardCornerRadius="16dp">
 
@@ -13,7 +17,7 @@
         android:id="@+id/mainRelativeLayout"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:background="@android:color/darker_gray"
+        android:background="@android:color/transparent"
         android:padding="12dp">
 
         <de.hdodenhof.circleimageview.CircleImageView

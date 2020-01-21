@@ -8,6 +8,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -32,14 +33,14 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
         TextView nameTv;
         CircleImageView imageView;
-        RelativeLayout relativeLayout;
+        CardView cardView;
 
         public CustomViewHolder(@NonNull View itemView) {
 
             super(itemView);
+            cardView = itemView.findViewById(R.id.mainCardView);
             nameTv = itemView.findViewById(R.id.nameTextView);
             imageView = itemView.findViewById(R.id.circleImageView);
-            relativeLayout = itemView.findViewById(R.id.mainRelativeLayout);
 
         }
     }
@@ -53,7 +54,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
     @Override
     public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
-        holder.relativeLayout.setBackgroundColor(holder.imageView.getResources().getColor(itemLists.get(position).getmBgcolor()));
+        holder.cardView.setCardBackgroundColor(holder.imageView.getResources().getColor(itemLists.get(position).getmBgcolor()));
         holder.nameTv.setText(itemLists.get(position).getmName());
         holder.imageView.setImageResource(itemLists.get(position).getmImage());
     }

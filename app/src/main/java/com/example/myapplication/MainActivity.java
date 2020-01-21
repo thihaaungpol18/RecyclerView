@@ -26,11 +26,11 @@ public class MainActivity extends AppCompatActivity {
         itemLists = new ArrayList<>();
         itemLists.add(new ModelClass("Thiha Aung", R.drawable.person_male, R.color.colorPrimary));
         itemLists.add(new ModelClass("Cherry 1oPhyu", R.drawable.person_female, android.R.color.holo_red_light));
-        itemLists.add(new ModelClass("Thiri", R.drawable.person_male, android.R.color.holo_purple));
+        itemLists.add(new ModelClass("Thiri", R.drawable.person_female, android.R.color.holo_purple));
         itemLists.add(new ModelClass("David Kyaw", R.drawable.user_male1, android.R.color.holo_red_dark));
-        itemLists.add(new ModelClass("Kyaw Gyi", R.drawable.person_female, android.R.color.holo_blue_dark));
+        itemLists.add(new ModelClass("Kyaw Gyi", R.drawable.person_male, android.R.color.holo_blue_dark));
         itemLists.add(new ModelClass("Banana", R.drawable.user_male1, android.R.color.holo_green_dark));
-        itemLists.add(new ModelClass("Kyaw Nanda", R.drawable.user_male, android.R.color.darker_gray));
+        itemLists.add(new ModelClass("Kyaw Nanda", R.drawable.user_male, android.R.color.transparent));
 
         adapter = new CustomAdapter(itemLists);
         layoutManager = new GridLayoutManager(this, 2);
