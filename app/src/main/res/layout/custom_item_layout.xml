@@ -26,9 +26,10 @@
             android:layout_height="96dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop"
             android:src="@drawable/user_male1"
-            app:civ_border_color="@android:color/darker_gray"
-            app:civ_border_width="2dp" />
+            app:civ_border_color="@android:color/white"
+            app:civ_border_width="1dp" />
 
         <TextView
             android:id="@+id/nameTextView"

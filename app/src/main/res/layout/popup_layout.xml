@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainCardViewPopup"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    app:cardCornerRadius="16dp">
+
+    <RelativeLayout
+        android:id="@+id/mainRelativeLayoutPopup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImageViewPopup"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/user_male1" />
+
+        <TextView
+            android:id="@+id/nameTextViewPopup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_toEndOf="@id/circleImageViewPopup"
+            android:text="Thiha Aung"
+            android:textColor="@color/yellow"
+            android:textSize="32sp" />
+
+        <TextView
+            android:id="@+id/fromTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nameTextViewPopup"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="16dp"
+            android:layout_toEndOf="@id/circleImageViewPopup"
+            android:text="From : "
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/flagImageViewPopup"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/nameTextViewPopup"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="16dp"
+            android:layout_toEndOf="@id/fromTextView"
+            android:src="@drawable/japan_flag" />
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

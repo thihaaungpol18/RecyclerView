@@ -1,9 +1,12 @@
 package com.example.myapplication;
 
-import android.util.Log;
+import android.content.Context;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -34,6 +37,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         TextView nameTv;
         CircleImageView imageView;
         CardView cardView;
+        View currentView;
 
         public CustomViewHolder(@NonNull View itemView) {
 
@@ -41,6 +45,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
             cardView = itemView.findViewById(R.id.mainCardView);
             nameTv = itemView.findViewById(R.id.nameTextView);
             imageView = itemView.findViewById(R.id.circleImageView);
+            currentView = itemView;
 
         }
     }
@@ -53,10 +58,37 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
-        holder.cardView.setCardBackgroundColor(holder.imageView.getResources().getColor(itemLists.get(position).getmBgcolor()));
+    public void onBindViewHolder(@NonNull final CustomViewHolder holder, final int position) {
+        final int backgroundColor = holder.imageView.getResources().getColor(itemLists.get(position).getmBgColor());
+        holder.cardView.setCardBackgroundColor(backgroundColor);
         holder.nameTv.setText(itemLists.get(position).getmName());
         holder.imageView.setImageResource(itemLists.get(position).getmImage());
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //Initializing What We Want To Use
+                LayoutInflater inflater = (LayoutInflater) v.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View view = inflater.inflate(R.layout.popup_layout, null, false);
+                PopupWindow popupWindow = new PopupWindow(view, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                popupWindow.setAnimationStyle(android.R.style.Animation_Translucent);
+                popupWindow.setFocusable(true);
+                popupWindow.setElevation(200);
+
+                TextView nameTextView = view.findViewById(R.id.nameTextViewPopup);
+                RelativeLayout relativeLayout = view.findViewById(R.id.mainRelativeLayoutPopup);
+                ImageView flagImageView = view.findViewById(R.id.flagImageViewPopup);
+                ImageView profileImageView = view.findViewById(R.id.circleImageViewPopup);
+
+                relativeLayout.setBackgroundColor(backgroundColor);
+                nameTextView.setText(itemLists.get(position).getmName());
+                profileImageView.setImageResource(itemLists.get(position).getmImage());
+                flagImageView.setImageResource(itemLists.get(position).getmFlagImage());
+
+                popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+            }
+        });
+
     }
 
     @Override

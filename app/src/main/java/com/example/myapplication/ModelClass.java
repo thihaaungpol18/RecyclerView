@@ -1,7 +1,5 @@
 package com.example.myapplication;
 
-import android.graphics.Color;
-
 /**
  * project: My Application
  * Created by : Thiha Eung
@@ -11,13 +9,15 @@ public class ModelClass {
 
     private String mName;
     private int mImage;
-    private int mBgcolor;
+    private int mBgColor;
+    private int mFlagImage;
 
 
-    public ModelClass(String mName, int mImage, int mBgcolor) {
+    public ModelClass(String mName, int mImage, int mBgColor, int mFlagImage) {
         this.mName = mName;
         this.mImage = mImage;
-        this.mBgcolor = mBgcolor;
+        this.mBgColor = mBgColor;
+        this.mFlagImage = mFlagImage;
     }
 
     public String getmName() {
@@ -28,7 +28,11 @@ public class ModelClass {
         return mImage;
     }
 
-    public int getmBgcolor() {
-        return mBgcolor;
+    public int getmBgColor() {
+        return mBgColor;
+    }
+
+    public int getmFlagImage() {
+        return mFlagImage;
     }
 }
